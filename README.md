@@ -5,7 +5,7 @@ Week 1 homework
 2. Using eslint, create an .eslintrc file that includes rules for the following:  
   a. proper indentation of 2 spaces  
   b. using semi-colons to terminate statements  
-  c. no use of undefined variables unless part of a global block
+  c. no use of undefined variables unless part of a global block  
   d. no unused variable definitions  
   e. always use strict equality/inequality  
   f. always use single quotes  
