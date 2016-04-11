@@ -12,7 +12,7 @@ Week 1 homework
   g. no console statements left behind  
   h. no dangling commas in object definitions  
   i. max line length of 80 characters with 2 space for indentation (can ignore urls)  
-  j. no trailing spaces on a line 
+  j. no trailing spaces on a line  
   k. require spacing inside curly brackets for objects   
   l. enforce a newline before a return statement  
 3. Lint the map-utils.js file and make the corrections necessary for eslint to verify it is clean.
