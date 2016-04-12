@@ -1,0 +1,16 @@
+{
+	"rules": {
+		"indent": ["error", 2],
+		"semi": ["error", "always"],
+		"no-undef": "error",
+		"no-unused-vars": ["error", { "vars": "all", "args": "after-used" }],
+		"eqeqeq": "error",
+		"quotes": ["error", "single"],
+		"no-console": "error",  
+		"comma-dangle": ["error", "never"],
+		"max-len": ["error", { "code": 82, "tabWidth": 4, "ignoreUrls": true }],
+		"no-trailing-spaces": "error",
+		"object-curly-spacing": ["error", "always"],
+		"newline-before-return": "error"  
+	}
+}
