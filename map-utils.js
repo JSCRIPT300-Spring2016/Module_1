@@ -3,7 +3,7 @@ var TILE_SIZE = 256;
 var tilePixelCenter = TILE_SIZE / 2;
 var pixelsPerLngDegree = TILE_SIZE / 360;
 var pixelsPerLngRadian = TILE_SIZE / (2 * Math.PI);
-var google = 'https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap';
+
 var degreesToRadians = function (degrees) {
   return (degrees * Math.PI) / 180;
 };

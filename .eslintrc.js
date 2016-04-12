@@ -2,6 +2,10 @@ module.exports = {
     "env": {
         "browser": true
     },
+    //allow the global variable google
+    "globals": {
+      "google": false
+    },
     "extends": "eslint:recommended",
     "rules": {
       //proper indentation of 2 spaces
