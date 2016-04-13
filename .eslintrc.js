@@ -1,32 +1,36 @@
 module.exports = {
-    "env": {
-        "browser": true
+    'env': {
+        'browser': true
     },
-    "extends": "eslint:recommended",
-    "rules": {
-        "indent": [
+    'globals': {
+      'google': false
+    },
+
+    'extends': 'eslint:recommended',
+    'rules': {
+        'indent': [
             2,
             4
         ],
-        "linebreak-style": [
+        'linebreak-style': [
             2,
-            "unix"
+            'unix'
         ],
-        "quotes": [
+        'quotes': [
             2,
-            "single"
+            'single'
         ],
-        "semi": [
+        'semi': [
             2,
-            "always"
+            'always'
         ],
-        "no-undef": [
+        'no-undef': [
             2
         ],
-        "no-unused-vars": [
+        'no-unused-vars': [
             2
         ],
-        "eqeqeq": [
+        'eqeqeq': [
             2
         ],
         'no-console': [
@@ -52,5 +56,7 @@ module.exports = {
         'newline-before-return': [
           2
         ]
+
+
     }
 };
