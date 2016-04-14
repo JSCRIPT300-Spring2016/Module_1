@@ -69,7 +69,10 @@ var getFormattedPlaceName = function (placeObj){
     return placeObj.formatted_address;
   }
 
-  return firstPart + childNodes;
+  return firstPart + childNodes
+  .filter(function (node) { return node.className !== 'postal-code';})
+  .map(function (node) { return node.textContent;}).join(', ');
+
 };
 var getAdjustedMapCenter = function (options){
   var mapCenter = options.mapCenter;
