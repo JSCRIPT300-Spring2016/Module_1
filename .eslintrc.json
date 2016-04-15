@@ -1,0 +1,50 @@
+{
+    "env": {
+        "browser": true
+    },
+    "rules": {
+        "indent": [
+            "error",
+            2
+        ],
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "no-undef": [
+            "error"
+        ],
+        "strict": [
+            "error"
+        ],
+        "no-console": [
+            "error"
+        ],
+        "comma-dangle": [
+            "error"
+        ],
+        "max-len": [
+            "error",
+            80,
+            2,
+            {"ignoreUrls": true}
+        ],
+        "no-trailing-spaces": [
+            "error"
+        ],
+        "curly": [
+            "error"
+        ],
+        "newline-before-return": [
+            "error"
+        ]
+    }
+}
