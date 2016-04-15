@@ -1,10 +1,9 @@
+/*global google, module*/
 var EARTH_RADIUS = 6371;
 var TILE_SIZE = 256;
 var tilePixelCenter = TILE_SIZE / 2;
 var pixelsPerLngDegree = TILE_SIZE / 360;
 var pixelsPerLngRadian = TILE_SIZE / (2 * Math.PI);
-var google;
-var module;
 var degreesToRadians = function (degrees){
   return (degrees * Math.PI) / 180;
 };

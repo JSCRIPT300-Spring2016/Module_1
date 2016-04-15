@@ -29,6 +29,7 @@
         "no-undefined": "error",
         "comma-dangle": ["error", "never"],
         "no-console": "error"
+        
 
 
     }
