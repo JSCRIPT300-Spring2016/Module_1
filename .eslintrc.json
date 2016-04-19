@@ -2,6 +2,12 @@
     "env": {
         "browser": true
     },
+    "globals": {
+        "module": true,
+        "result": true,
+        "round": true,
+        "google": true
+    },
     "rules": {
         "indent": [
             "error",
