@@ -52,6 +52,9 @@
         ],
         "newline-before-return": [
             "error"
+        ],
+        "eqeqeq": [
+            "error"
         ]
     }
 }
