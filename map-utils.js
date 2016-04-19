@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = {
   getAdjustedPositionFromMapInstance: getAdjustedPositionFromMapInstance,
   getDistance: getDistance,
@@ -15,17 +17,12 @@ var tilePixelCenter = TILE_SIZE / 2;
 var pixelsPerLngDegree = TILE_SIZE / 360;
 var pixelsPerLngRadian = TILE_SIZE / (2 * Math.PI);
 var degreesToRadians = function (degrees) {
-  'use strict';
-
   return (degrees * Math.PI) / 180;
 };
 var radiansToDegrees = function (radians) {
-  'use strict';
-
   return radians / (Math.PI / 180);
 };
 var getDistance = function (posA, posB) {
-  'use strict';
   var startLat = degreesToRadians(posA.lat || posA.latitude);
   var startLng = degreesToRadians(posA.lng || posA.longitude);
   var endLat = degreesToRadians(posB.lat || posB.latitude);
@@ -37,7 +34,6 @@ var getDistance = function (posA, posB) {
   return Number(distance.toFixed(3));
 };
 var getRadiusLatLng = function (latLng, radius) {
-  'use strict';
   var startLat = degreesToRadians(latLng.lat);
   var startLng = degreesToRadians(latLng.lng);
   var dist = parseFloat(radius) / (EARTH_RADIUS * 1000);
@@ -52,7 +48,6 @@ var getRadiusLatLng = function (latLng, radius) {
   return { lat: destLat, lng: destLng };
 };
 var getPointFromLatLng = function (latLng, opts) {
-  'use strict';
   opts = opts || {asPlainObject: false};
   var siny = Math.max(Math.sin(degreesToRadians(latLng.lat)), -0.9999);
   var x = TILE_SIZE * (0.5 + latLng.lng / 360);
@@ -64,7 +59,6 @@ var getPointFromLatLng = function (latLng, opts) {
   return new x, y;
 };
 var getLatLngFromPoint = function (point) {
-  'use strict';
   var lng = (point.x - tilePixelCenter) / pixelsPerLngDegree;
   var latRadians = (point.y - tilePixelCenter) / -pixelsPerLngRadian;
   var lat = radiansToDegrees(2 * Math.atan(Math.exp(latRadians)) - Math.PI / 2);
@@ -72,7 +66,6 @@ var getLatLngFromPoint = function (point) {
   return {lat: lat, lng: lng};
 };
 var getFormattedPlaceName = function (placeObj) {
-  'use strict';
   if (!placeObj.formatted_address) {
     return null;
   };
@@ -97,7 +90,6 @@ var getFormattedPlaceName = function (placeObj) {
 };
 
 var getAdjustedMapCenter = function (options) {
-  'use strict';
   var mapCenter = options.mapCenter;
   var mapZoom = options.mapZoom;
   var offset = options.offset;
@@ -119,7 +111,6 @@ var getAdjustedMapCenter = function (options) {
   return adjustedMapCenter;
 };
 var latLngAreDifferent = function (firstLoc, secondLoc) {
-  'use strict';
   var distance;
   var firstLat = parseFloat((firstLoc.lat || firstLoc.latitude).toFixed(6));
   var firstLng = parseFloat((firstLoc.lng || firstLoc.longitude).toFixed(6));
@@ -132,7 +123,6 @@ var latLngAreDifferent = function (firstLoc, secondLoc) {
   return false;
 };
 var getAdjustedPositionFromMapInstance = function (instance, offset) {
-  'use strict';
 
   var wrappedCenter = new google.maps.LatLng({
     lat: center.lat(),

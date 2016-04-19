@@ -29,7 +29,8 @@
             "error"
         ],
         "strict": [
-            "error"
+            "error",
+            "global"
         ],
         "no-console": [
             "error"
