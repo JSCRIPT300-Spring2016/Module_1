@@ -38,12 +38,12 @@ var getRadiusLatLng = function (latLng, radius) {
   return { lat: destLat, lng: destLng };
 };
 var getPointFromLatLng = function (latLng, opts) {
-  opts = opts || {asPlainObject: false};
+  opts = opts || { asPlainObject: false };
   var siny = Math.max(Math.sin(degreesToRadians(latLng.lat)), -0.9999);
   var x = TILE_SIZE * (0.5 + latLng.lng / 360);
   var y = TILE_SIZE * (0.5 - Math.log((1 + siny) / (1 - siny)) / (4 * Math.PI));
   if (opts.asPlainObject) {
-    return {x: x, y: y};
+    return { x: x, y: y };
   }
 
   return new google.maps.Point(x, y);
@@ -53,7 +53,7 @@ var getLatLngFromPoint = function (point) {
   var latRadians = (point.y - tilePixelCenter) / -pixelsPerLngRadian;
   var lat = radiansToDegrees(2 * Math.atan(Math.exp(latRadians)) - Math.PI / 2);
 
-  return {lat: lat, lng: lng};
+  return { lat: lat, lng: lng };
 };
 var getFormattedPlaceName = function (placeObj) {
   if (!placeObj.formatted_address) {
@@ -85,7 +85,7 @@ var getAdjustedMapCenter = function (options) {
   var point = getPointFromLatLng({
     lat: result(mapCenter, 'lat'),
     lng: result(mapCenter, 'lng')
-  }, {asPlainObject: true});
+  }, { asPlainObject: true });
   var adjustedMapCenter = getLatLngFromPoint({
     x: point.x,
     y: point.y + (directionalOffset / 2) / z
