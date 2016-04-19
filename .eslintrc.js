@@ -11,7 +11,7 @@ module.exports = {
         "linebreak-style": [
             "error",
             "windows"
-        ],
+        ],  
         "quotes": [
             "error",
             "single"
@@ -46,7 +46,7 @@ module.exports = {
         "no-trailing-spaces": [
             "error"
         ],
-        "space-in-brackets": [
+        "object-curly-spacing": [
             "error", 
             "always"
         ],
