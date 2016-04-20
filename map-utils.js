@@ -19,7 +19,8 @@ var getDistance = function (posA, posB) {
   var distance = Math.acos(Math.min(partialResult, 1)) * EARTH_RADIUS;
 
   return Number(distance.toFixed(3)); 
-}; 
+};
+/* exported getRadiusLatLng */
 var getRadiusLatLng = function (latLng, radius) { 
   var startLat = degreesToRadians(latLng.lat); 
   var startLng = degreesToRadians(latLng.lng); 

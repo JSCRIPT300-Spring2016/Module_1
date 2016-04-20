@@ -3,6 +3,13 @@ module.exports = {
         "browser": true
     },
     "extends": "eslint:recommended",
+    "globals": {
+        "google": true,
+        "result": true,
+        "module": true,
+        "degreesToradians": true,
+        "getRadiusLatlng": true
+    },
     "rules": {
         "indent": [
             "error",
