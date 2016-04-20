@@ -3,6 +3,12 @@ module.exports = {
         "browser": true
     },
     "extends": "eslint:recommended",
+    "globals": {
+        "google": true,
+        "result": true,
+        "round": true,
+        "module": true
+    },
     "rules": {
         "indent": [
             "error",
