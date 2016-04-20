@@ -1,27 +1,32 @@
 module.exports = {
-    
+    "env": {
+    "browser": true
+    },
+    "globals": {
+        "google":true,
+        "result": true,
+        "module": true,
+        "round": true
+    },
     "extends": "eslint:recommended",
     "rules": {
         "indent": [
             "error",
-            "tab"
+            2
         ],
         "linebreak-style": [
             "error",
             "unix"
         ],
         "quotes": [
-            2,
-            "double"
-        ],
-        "indent": [
-            2
+            "error",
+            "single"
         ],
         "semi": [
             "error",
             "always"
         ],
-        "no-undefined": [
+        "no-undef": [
             "error"
         ],
         "no-unused-vars": [
@@ -29,7 +34,7 @@ module.exports = {
         ],
         "strict": [
             "error",
-            "never"
+            "global"
         ],
         "no-console": [
             "error"
@@ -39,13 +44,20 @@ module.exports = {
             "never"
         ],
         "max-len": [
-            2,
-            80,
+            "error",
+            80, 2,
             {ignoreUrls: true}
         ],
         "no-trailing-spaces": [
             "error", 
             { "skipBlankLines": true }
         ],
+        "object-curly-spacing": [
+        "error",
+        "always"
+        ],
+        "newline-before-return":[
+        "error"
+        ]
     }
 };
