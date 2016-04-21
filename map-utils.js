@@ -88,14 +88,14 @@ var getFormattedPlaceName = function (placeObj) {
   var addressContainer = window.document.createElement('span');
   addressContainer.innerHTML = htmlAddress;
   var childNodes = Array.prototype.slice.call(addressContainer.children, 0);
-  if (childNodes.length == 0) {
+  if (childNodes.length === 0) {
 
     return placeObj.formatted_address;
   }
 
   return firstPart + childNodes.filter(function (node) {
 
-    return node.className != 'postal-code'}).map(function (node) {
+    return node.className !== 'postal-code'}).map(function (node) {
 
       return node.textContent}).join(',');
 }
@@ -128,7 +128,7 @@ var latLngAreDifferent = function (firstLoc, secondLoc) {
   var firstLng = parseFloat((firstLoc.lng || firstLoc.longitude).toFixed(6));
   var secondLat = parseFloat((secondLoc.lat || secondLoc.latitude).toFixed(6));
   var secondLng = parseFloat((secondLoc.lng || secondLoc.longitude).toFixed(6));
-  if (firstLat != secondLat || firstLng != secondLng) {
+  if (firstLat !== secondLat || firstLng !== secondLng) {
 
     return true;
   }

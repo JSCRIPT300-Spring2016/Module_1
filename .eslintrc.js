@@ -4,8 +4,7 @@ module.exports = {
     },
     "extends": "eslint:recommended",
     "rules": {
-        "indent": ["error", 2],
-        "no-console":"error",
+
         "accessor-pairs": "error",
         "array-bracket-spacing": "error",
         "array-callback-return": "error",
@@ -44,7 +43,7 @@ module.exports = {
         "dot-location": "error",
         "dot-notation": "error",
         "eol-last": "error",
-        "eqeqeq": "off",
+        "eqeqeq": "error",
         "func-names": "off",
         "func-style": [
             "error",
@@ -62,7 +61,7 @@ module.exports = {
             }
         ],
         "id-match": "error",
-        "indent": "off",
+        "indent": ["error", 2],
         "init-declarations": "off",
         "jsx-quotes": "error",
         "key-spacing": "error",
@@ -89,6 +88,7 @@ module.exports = {
         "no-caller": "error",
         "no-catch-shadow": "error",
         "no-confusing-arrow": "error",
+        "no-console":"error",
         "no-continue": "error",
         "no-div-regex": "error",
         "no-duplicate-imports": "error",
@@ -153,6 +153,7 @@ module.exports = {
         "no-unmodified-loop-condition": "error",
         "no-unneeded-ternary": "error",
         "no-unused-expressions": "error",
+        "no-unused-vars": "error",
         "no-use-before-define": "error",
         "no-useless-call": "error",
         "no-useless-concat": "error",
