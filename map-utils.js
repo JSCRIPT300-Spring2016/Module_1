@@ -1,9 +1,10 @@
+'use strict';
+
 var EARTH_RADIUS = 6371;
 var TILE_SIZE = 256;
 var tilePixelCenter = TILE_SIZE / 2;
 var pixelsPerLngDegree = TILE_SIZE / 360;
 var pixelsPerLngRadian = TILE_SIZE / (2 * Math.PI);
-var google;
 var degreesToRadians = function (degrees) {
   return (degrees * Math.PI) / 180;
 };
@@ -17,7 +18,6 @@ var getDistance = function (posA, posB) {
   var endLng = degreesToRadians(posB.lng || posB.longitude);
   var partialResult = Math.sin(startLat) * Math.sin(endLat) +
       Math.cos(startLat) * Math.cos(endLat) * Math.cos(startLng - endLng);
- // console.log('partialResult: ', partialResult);
   var distance = Math.acos(Math.min(partialResult, 1)) * EARTH_RADIUS;
 
   return Number(distance.toFixed(3));
@@ -33,7 +33,6 @@ var getRadiusLatLng = function (latLng, radius) {
       Math.cos(startLat), Math.cos(dist) - Math.sin(startLat) *
       Math.sin(destLat))) * 180) / Math.PI;
   destLat = (destLat * 180) / Math.PI;
- // console.log('destLat: ', destLat);
 
   return { lat: destLat, lng: destLng };
 };
@@ -80,8 +79,6 @@ var getAdjustedMapCenter = function (options) {
   var reverse = options.reverse;
   var directionalOffset = reverse ? offset * -1 : offset;
   var z = Math.pow(2, mapZoom);
-  //console.log('z: ', z);
-  var result;
   var point = getPointFromLatLng({
     lat: result(mapCenter, 'lat'),
     lng: result(mapCenter, 'lng')
@@ -90,14 +87,12 @@ var getAdjustedMapCenter = function (options) {
     x: point.x,
     y: point.y + (directionalOffset / 2) / z
   });
-  var round;
   adjustedMapCenter.lat = round(adjustedMapCenter.lat, 6);
   adjustedMapCenter.lng = round(adjustedMapCenter.lng, 6);
 
   return adjustedMapCenter;
 };
 var latLngAreDifferent = function (firstLoc, secondLoc) {
-  //var distance;
   var firstLat = parseFloat((firstLoc.lat || firstLoc.latitude).toFixed(6));
   var firstLng = parseFloat((firstLoc.lng || firstLoc.longitude).toFixed(6));
   var secondLat = parseFloat((secondLoc.lat || secondLoc.latitude).toFixed(6));
@@ -128,14 +123,11 @@ var getAdjustedPositionFromMapInstance = function (instance, offset) {
 
   return response;
 };
-var module;
-var degreesToradians;
-var getRadiusLatlng;
 module.exports = {
   getAdjustedPositionFromMapInstance: getAdjustedPositionFromMapInstance,
   getDistance: getDistance,
-  degreesToRadians: degreesToradians,
-  getRadiusLatLng: getRadiusLatlng,
+  degreesToRadians: degreesToRadians,
+  getRadiusLatLng: getRadiusLatLng,
   getPointFromLatLng: getPointFromLatLng,
   getLatLngFromPoint: getLatLngFromPoint,
   getFormattedPlaceName: getFormattedPlaceName,
