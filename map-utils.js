@@ -1,3 +1,5 @@
+'use strict';
+
 var EARTH_RADIUS = 6371;
 var TILE_SIZE = 256;
 var tilePixelCenter = TILE_SIZE / 2;
@@ -20,7 +22,7 @@ var getDistance = function (posA, posB) {
 
   return Number(distance.toFixed(3)); 
 };
-/* exported getRadiusLatLng */
+
 var getRadiusLatLng = function (latLng, radius) { 
   var startLat = degreesToRadians(latLng.lat); 
   var startLng = degreesToRadians(latLng.lng); 
@@ -123,8 +125,8 @@ var getAdjustedPositionFromMapInstance = function (instance, offset) {
 module.exports = { 
   getAdjustedPositionFromMapInstance: getAdjustedPositionFromMapInstance,
   getDistance: getDistance, 
-  degreesToRadians: degreesToradians,
-  getRadiusLatLng: getRadiusLatlng,
+  degreesToRadians: degreesToRadians,
+  getRadiusLatLng: getRadiusLatLng,
   getPointFromLatLng: getPointFromLatLng,
   getLatLngFromPoint: getLatLngFromPoint,
   getFormattedPlaceName: getFormattedPlaceName,

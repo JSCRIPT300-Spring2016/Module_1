@@ -6,9 +6,7 @@ module.exports = {
     "globals": {
         "google": true,
         "result": true,
-        "module": true,
-        "degreesToradians": true,
-        "getRadiusLatlng": true
+        "module": true
     },
     "rules": {
         "indent": [
@@ -30,6 +28,10 @@ module.exports = {
         "no-undef": [
             "error",
             { "typeof": true }
+        ],
+        "strict": [
+            "error",
+            "global"
         ],
         "jsx-quotes": [
             "error",
