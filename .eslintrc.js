@@ -8,22 +8,28 @@ module.exports = {
             "error",
             2
         ],
-        "linebreak-style": [
-            "error",
-            "windows"
-        ],
-        "quotes": [
-            "error",
-            "single"
-        ],
         "semi": [
             "error",
             "always"
         ],
-        "no-console": "error",
-        "comma-dangle": [
+        "no-undef": [
+            "error"
+        ],
+        "no-unused-vars": [
+            "error"
+        ],
+        "eqeqeq": [
+            "error"
+        ],
+         "quotes": [
             "error",
-            "never"
+            "single"
+        ],
+        "no-console": [
+            "error"
+        ],
+        "comma-dangle": [
+            "error"
         ],
         "max-len": [
             "error",
@@ -31,14 +37,15 @@ module.exports = {
             2,
             {"ignoreUrls": true}
         ],
-        "no-trailing-spaces":
-          "error",
+        "no-trailing-spaces": [
+            "error"
+        ],
         "object-curly-spacing": [
             "error",
             "always"
         ],
-        "newline-before-return": 
-          "error"
-
+        "newline-before-return": [
+            "error"
+        ]
     }
 };
