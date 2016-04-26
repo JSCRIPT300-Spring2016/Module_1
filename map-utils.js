@@ -1,3 +1,17 @@
+/* global
+  getRadiusLatLng
+  google
+  distance
+  x
+  y
+  z
+  round
+  module
+  degreesToradians
+  getRadiusLatlng
+  result
+ */
+
 var EARTH_RADIUS = 6371;
 var TILE_SIZE = 256;
 var tilePixelCenter = TILE_SIZE / 2;
