@@ -1,13 +1,7 @@
 /* global
-  getRadiusLatLng
   google
-  distance
-  x
-  y
-  z
   round
   module
-  degreesToradians
   result
  */
 
@@ -30,7 +24,7 @@ var getDistance = function (posA, posB) {
   var endLng = degreesToRadians(posB.lng || posB.longitude);
   var partialResult = Math.sin(startLat) * Math.sin(endLat) +
     Math.cos(startLat) * Math.cos(endLat) * Math.cos(startLng - endLng);
-  distance = Math.acos(Math.min(partialResult, 1)) * EARTH_RADIUS;
+  var distance = Math.acos(Math.min(partialResult, 1)) * EARTH_RADIUS;
 
   return Number(distance.toFixed(3));
 };
@@ -53,8 +47,8 @@ var getRadiusLatLng = function (latLng, radius) {
 var getPointFromLatLng = function (latLng, opts) {
   opts = opts || { asPlainObject: false };
   var siny = Math.max(Math.sin(degreesToRadians(latLng.lat)), -0.9999);
-  x = TILE_SIZE * (0.5 + latLng.lng / 360);
-  y = TILE_SIZE * (0.5 - Math.log((1 + siny) / (1 - siny)) / (4 * Math.PI));
+  var x = TILE_SIZE * (0.5 + latLng.lng / 360);
+  var y = TILE_SIZE * (0.5 - Math.log((1 + siny) / (1 - siny)) / (4 * Math.PI));
   if (opts.asPlainObject) {
     return { x: x, y: y };
   }
@@ -100,7 +94,7 @@ var getAdjustedMapCenter = function (options) {
   var offset = options.offset;
   var reverse = options.reverse;
   var directionalOffset = reverse ? offset * -1 : offset;
-  z = Math.pow(2, mapZoom);
+  var z = Math.pow(2, mapZoom);
   var point = getPointFromLatLng({
     lat: result(mapCenter, 'lat'),
     lng: result(mapCenter, 'lng')
@@ -117,7 +111,6 @@ var getAdjustedMapCenter = function (options) {
 };
 
 var latLngAreDifferent = function (firstLoc, secondLoc) {
-// var distance;
   var firstLat = parseFloat((firstLoc.lat || firstLoc.latitude).toFixed(6));
   var firstLng = parseFloat((firstLoc.lng || firstLoc.longitude).toFixed(6));
   var secondLat = parseFloat((secondLoc.lat || secondLoc.latitude).toFixed(6));
@@ -153,7 +146,7 @@ var getAdjustedPositionFromMapInstance = function (instance, offset) {
 module.exports = {
   getAdjustedPositionFromMapInstance: getAdjustedPositionFromMapInstance,
   getDistance: getDistance,
-  degreesToRadians: degreesToradians,
+  degreesToRadians: degreesToRadians,
   getRadiusLatLng: getRadiusLatLng,
   getPointFromLatLng: getPointFromLatLng,
   getLatLngFromPoint: getLatLngFromPoint,
