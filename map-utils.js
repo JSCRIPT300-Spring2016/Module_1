@@ -8,7 +8,6 @@
   round
   module
   degreesToradians
-  getRadiusLatlng
   result
  */
 
@@ -86,8 +85,12 @@ var getFormattedPlaceName = function (placeObj) {
   }
 
   return firstPart + childNodes
-  .filter(function (node) { return node.className !== 'postal-code'})
-  .map(function (node) { return node.textContent})
+  .filter(function (node) {
+    return node.className !== 'postal-code';
+  })
+  .map(function (node) {
+    return node.textContent;
+  })
   .join(', ');
 };
 
@@ -151,7 +154,7 @@ module.exports = {
   getAdjustedPositionFromMapInstance: getAdjustedPositionFromMapInstance,
   getDistance: getDistance,
   degreesToRadians: degreesToradians,
-  getRadiusLatLng: getRadiusLatlng,
+  getRadiusLatLng: getRadiusLatLng,
   getPointFromLatLng: getPointFromLatLng,
   getLatLngFromPoint: getLatLngFromPoint,
   getFormattedPlaceName: getFormattedPlaceName,
